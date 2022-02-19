@@ -1,0 +1,29 @@
+{
+  "name": "restful_api",
+  "version": "1.0.0",
+  "description": "Project2",
+  "main": "server.js",
+  "scripts": {
+    "test": "none",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+ 
+  },
+  "author": "Terrell Hudson",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1074.0",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "moment": "^2.29.1",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.15.1"
+  }
+}

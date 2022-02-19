@@ -1,0 +1,362 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Plaster', cursive;
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: yellow;
+}
+
+.header {
+	top: 0;
+	position: relative;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(15, 241, 211, 0.87),
+			rgba(0, 0, 255, 0.897)
+		),
+		url(/img/brainConnectBG.jpg);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.title {
+	text-align: center;
+	align-items: center;
+	top: 8%;
+	left: 50%;
+	position: absolute;
+	color: rgba(255, 68, 0, 0.705);
+	font-size: 2em;
+	transform: translate(-50%, 0);
+}
+
+.sign-up {
+	height: 444px;
+	width: 300px;
+	padding: 11px;
+	text-align: center;
+	align-items: center;
+	border-radius: 8px;
+	position: absolute;
+	top: 22%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	justify-content: center;
+	background-color: rgba(1, 1, 58, 0.842);
+}
+
+button {
+	margin: 18px;
+	padding: 5px;
+	color: rgb(123, 207, 235);
+	border-radius: 8px;
+	background-color: rgba(255, 68, 0, 0.705);
+}
+
+.logoutBtn {
+	margin-top: -11%;
+	border: none;
+	
+}
+
+.btn {
+	color: rgba(255, 166, 0, 0.664);
+	border: none;
+	background-color: rgba(0, 0, 0, 0.191);
+}
+
+.btn:hover {
+	color: rgba(212, 5, 5, 0.698);
+}
+
+.username,
+.email,
+.password,
+.loginEmail,
+.loginPassword {
+	padding: 5px;
+	border: none;
+	margin: 16px;
+	border-radius: 8px;
+	font-size: 0.7em;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Styles for Main Backdrop/Nav Bar */
+
+.topBar {
+	position: relative;
+	width: 100vw;
+	height: 56px;
+	box-shadow: 12px, 20px, 2px, 12px rgb(255, 115, 0);
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(15, 169, 241, 0.924),
+			rgba(0, 0, 255, 0.657)
+		),
+		url(../img/brainConnectBG.jpg);
+	background-color: rgba(75, 99, 107, 0.493);
+}
+
+.logo {
+	position: absolute;
+	margin: 1px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background-color: blue;
+	background-image: linear-gradient(
+		to bottom right,
+		rgba(0, 0, 255, 0.774),
+		orange
+	);
+}
+
+.toName {
+	position: absolute;
+	margin: 5px;
+
+	top: -9;
+	left: 56;
+	font-size: 0.5em;
+	color: rgba(255, 68, 0, 0.705);
+}
+
+.logoTitle {
+	position: absolute;
+	height: 36px;
+	width: 275px;
+	top: 5;
+	left: 56;
+	letter-spacing: 3px;
+	font-size: 0.5em;
+	padding: 5px;
+	color: rgb(200, 126, 99);
+	background-color: rgba(0, 0, 0, 0.068);
+	border-radius: 3px;
+}
+
+.profileArea {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-right: 11%;
+	transform: translate(0%, -50%);
+	height: 46px;
+	width: 46px;
+	border-radius: 50%;
+}
+
+.logout,
+.login {
+	position: absolute;
+	top: 50%;
+	right: 19.5%;
+	font-size: 0.5em;
+	color: rgba(245, 230, 22, 0.945);
+}
+
+/* Styles for Post and Dashboard */
+
+.postBox {
+	position: relative;
+	height: 122px;
+	width: 100vw;
+	display: block;
+	margin-top: 36px;
+	padding: 15px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	border: 3px solid rgba(3, 4, 70, 0.089);
+}
+
+.titleBox {
+	position: absolute;
+	width: 21vw;
+	height: 44px;
+	top: 8%;
+	left: 18%;
+	border-radius: 8px;
+	border: none;
+	padding: 5px;
+	font-size: 0.7em;
+}
+
+.textBox {
+	position: absolute;
+	width: 42vw;
+	height: 44px;
+	top: 50%;
+	left: 50%;
+    border: none;
+	font-size: 1em;
+	padding: 5px;
+	border-radius: 8px;
+    box-shadow: 2px 3px 11px 5px rgba(128, 128, 128, 0.438);
+	transform: translate(-50%, -50%);
+}
+
+.postDetails {
+	position: absolute;
+	top: 0;
+	border: 1px solid rgba(37, 21, 21, 0.705);
+	height: 111px;
+	width: 63%;
+	padding: 8px;
+	border-radius: 8px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 255, 0.513);
+    background-color: rgba(82, 112, 112, 0.219);
+	transform: translate(-50%, 0);
+}
+
+.addPostBtn {
+	position: absolute;
+	bottom: 20;
+	right: 5;
+	color: blue;
+    box-shadow: 3px 3px 3px 2px rgba(240, 131, 8, 0.767);
+    border-radius: 50%;
+}
+
+.userIcon {
+	font-size: 0.5em;
+	padding: 5px;
+	position: absolute;
+    left: 8;
+	margin-top: 0;
+	height: 63px;
+	width: 63px;
+	background-color: rgba(0, 0, 255, 0.698);
+	border-radius: 50%;
+}
+
+/* Dashboard */
+.mainDisplay {
+	position: relative;
+}
+
+.dashboard {
+	position: relative;
+	display: block;
+	margin-top: 5%;
+	margin-left: 50%;
+	position: flex;
+	padding: 8px;
+	align-items: center;
+	transform: translate(-50%, 0%);
+	height: auto;
+	width: 60vw;
+	background-color: rgba(82, 112, 112, 0.219);
+	border-radius: 8px;
+	border: 2px solid rgb(73, 34, 3);
+}
+
+.theDescription {
+	color: rgb(114, 0, 0);
+    border: 1px solid yellow;
+    padding: 5px;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 8px;
+}
+
+.postList {
+	list-style-type: none;
+}
+
+.newPost {
+	border: 1px dotted rgb(167, 85, 9);
+	padding: 5px;
+	color: rgb(0, 0, 0);
+	border-radius: 8px;
+}
+/* Profile page stylings */
+
+.profileCard {
+	position: relative;
+	left: 60;
+	margin: 33px;
+	height: 77vh;
+	padding: 8px;
+	width: 41.3vw;
+	box-shadow: 8px 8px 22px 8px rgba(0, 0, 139, 0.561);
+	border-radius: 8px;
+    background-image: url('/img/brainConnectBG.jpg');
+	background-color: rgba(0, 4, 236, 0.089);
+	border: 2px solid orange;
+}
+
+.profileAvatar {
+	margin: 6px;
+	border: 3px solid rgba(0, 0, 255, 0.63);
+	position: absolute;
+	top: 0;
+	left: 21%;
+	height: 133px;
+	width: 133px;
+	transform: translate(-50%, 0);
+	border-radius: 50%;
+}
+
+.statBox {
+	position: absolute;
+	background-color: rgba(245, 235, 235, 0.931);
+	color: rgb(153, 18, 0);
+	padding: 5px;
+	height: 60%;
+	width: 39vw;
+	font-size: 0.7em;
+	font-weight: 200;
+	bottom: 8;
+	border: 2px solid orange;
+}
+
+.userInfo {
+	position: relative;
+	float: left;
+	top: -650;
+	right: -810;
+	margin: 12px;
+	height: 77vh;
+	width: 40vw;
+    border-radius: 8px;
+	background-color: rgba(0, 0, 255, 0.164);
+}
+
+.profilePostBox {
+	position: absolute;
+	margin: 22px;
+	top: 0;
+	left: 0;
+	height: 46%;
+	width: 36vw;
+	padding: 8px;
+	border-radius: 8px;
+	border: 2px solid blue;
+}
+
+.interestBox {
+	position: absolute;
+	margin: 22px;
+	bottom: 0;
+	left: 0;
+	height: 40%;
+	width: 36vw;
+	padding: 8px;
+	border-radius: 8px;
+	border: 2px solid blue;
+}

@@ -1,0 +1,144 @@
+
+ <div class="Dashboard"> 
+
+        <!-- Postbox Container card -->
+      <div class="postBox">
+            <!-- Your profile icon displays for post -->
+            <div class="left_Area_User">
+              {{!-- "/img/images/tocents profile icon - cropped.png" --}}
+                <img class="userIcon" src="{{userPic}}">
+            </div>
+
+            <!-- Where you type your post -->
+            <div class="right_Area_Post"> 
+                <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control titleBox" id="title" placeholder="Title here...">
+                    </div>
+                    <div class="form-group">                
+                      <textarea class="form-control textBox" id="postDescription" rows="3" placeholder="add your 2&#162..."></textarea>
+                    </div>
+                    {{#if logged_in}}
+                    <button class="addPostBtn" >+Add</button>
+                    {{/if}}
+                </form>
+            </div>
+      </div>
+
+        <!-- Where you can see the hottest or Latest posts -->
+      <div class="MiniMenu">
+
+            <!-- Most Popular posts -->
+            <div class="popular-post">
+              <img class="pop_Post_icon" src="/img/images/Hottest Post Icon(blue).png">
+            </div>
+
+            <!-- Latest Posts -->
+            <div class="Latest-post">
+              <img class="live_Post_icon" src="/img/images/live-streaming icon (blue).png">
+            </div>
+      </div>
+
+{{#if logged_in}}
+{{#each theTakes as |take|}}
+       
+      <div class="sitePosts">
+        <div class="userPost">
+          <img class="userIcon" src="/img/images/tocents profile icon - cropped.png">
+          <h2 class="userPost_Title">{{take.title}}</h2>
+          <p class="userPost_Description">..."{{take.description}}"
+          </p>
+        </div>
+{{!-- hidden text box for comment --}}
+        <div class="postIcon postButtons">
+        
+             <div id="myDIV{{take.id}}" style="display: none;">
+        
+            <textarea class=" textBox" id="commentText{{take.id}}" placeholder="comment"></textarea>
+
+            <button class="btn btn-primary" id="submitbtn" data-id ="{{take.id}}" onclick="commentButtonHandler({{take.id}})">submit</button> 
+            </div>
+
+{{!-- display comments --}}
+        {{#if take.comments}}
+ 
+          <h3 class="col-md">Comments</h3>
+         {{#each take.comments as |comment|}}
+        <div class="col-md">
+        <p>{{comment.text}}</p>
+         </div>
+        {{/each}}
+         {{/if}}
+
+        </div>
+          <button class=" commentButton" id="commentbtn" data-id ="{{take.id}}" onclick="myFunction({{take.id}})">comment</button>  
+          <button class=" likeButton" id="likebtn" data-id ="{{take.id}}" onclick="likeButtonHandler({{take.id}})">like</button>
+          <br>
+
+
+           {{!-- <div id="myDIV{{take.id}}" style="display: none;">
+        
+         <textarea class=" textBox" id="commentText" placeholder="comment"></textarea>
+
+         <button class="btn btn-primary" id="submitbtn" data-id ="{{take.id}}" onclick="commentButtonHandler()">submit</button> 
+         </div> --}}
+      </div>
+
+      
+       {{/each}}
+
+    {{else}}
+
+
+{{#each theTakes as |take|}}
+       
+      <div class="sitePosts">
+        <div class="userPost">
+          <img class="userIcon" src="/img/images/tocents profile icon - cropped.png">
+          <h2 class="userPost_Title">{{take.title}}</h2>
+          <p class="userPost_Description">..."{{take.description}}"
+          </p>
+        </div>
+{{!-- hidden text box for comment --}}
+        <div class="postIcon postButtons">
+        
+             <div id="myDIV{{take.id}}" style="display: none;">
+        
+            <textarea class=" textBox" id="commentText{{take.id}}" placeholder="comment"></textarea>
+
+            <button class="btn btn-primary" id="submitbtn" data-id ="{{take.id}}" onclick="commentButtonHandler({{take.id}})">submit</button> 
+            </div>
+
+{{!-- display comments --}}
+        {{#if take.comments}}
+ 
+          <h3 class="col-md">Comments</h3>
+         {{#each take.comments as |comment|}}
+        <div class="col-md">
+        <p>{{comment.text}}</p>
+         </div>
+        {{/each}}
+         {{/if}}
+
+        </div>
+          {{!-- <button class=" commentButton" id="commentbtn" data-id ="{{take.id}}" onclick="myFunction({{take.id}})">comment</button>  
+          <button class=" likeButton" id="likebtn" data-id ="{{take.id}}" onclick="likeButtonHandler({{take.id}})">like</button>
+          <br> --}}
+
+
+           {{!-- <div id="myDIV{{take.id}}" style="display: none;">
+        
+         <textarea class=" textBox" id="commentText" placeholder="comment"></textarea>
+
+         <button class="btn btn-primary" id="submitbtn" data-id ="{{take.id}}" onclick="commentButtonHandler()">submit</button> 
+         </div> --}}
+      </div>
+
+      
+       {{/each}}
+
+
+       {{/if}}
+    </div>
+
+         <script src="/js/newPost.js"></script>

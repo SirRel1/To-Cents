@@ -1,0 +1,97 @@
+<section>
+    <div>
+        
+        <aside>
+            <div class="profileCard">
+                <img class="profileAvatar" src="{{userPic}}">
+                <div class="statBox">
+                    Memeber Visits: {{countVisit}}
+                    <hr>
+                    <b>{{format_date profile}}</b>: {{username}}  
+                    <hr>
+                    <b>Role</b>: All Access!
+                    <hr>
+                    <b>About</b>: I enjoy writing about the world I see daily.
+                    <hr>
+                    <b>Stats</b>: 10,000Pennies 10,000Likes
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+</section>
+
+
+
+<section class="userInfo">
+    
+
+    <div class="interestBox">
+        Connections
+        <hr>
+
+        <div>
+          
+     {{#each connections as |con|}}
+    <div class="col-md">
+    <p>You and {{con.username}} liked</p>
+        {{#each con.take as |id|}}
+         <div class="col-md">
+         <p>take id {{id.item}}</p>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+           
+        </div>
+
+    </div>
+    
+
+    
+</section>
+<section class="userInfo">
+    <div class="profilePostBox">
+        <form method="POST" action="/api/users/uploads" enctype="multipart/form-data">
+    <div>
+        <label>Upload profile picture</label>
+        <input type="file" class="profilePic" name="profile-file" required/>
+    </div>
+    <div>
+        <input class="profileUpload" type="submit" value="Upload" />
+    </div>
+</form>
+
+<div class="userInfo2"> 
+                <div class="interestBox">
+                    My "To:Cents" Posts:
+
+                    {{#each theTakes as |take|}}
+                <div class="col-md">
+                <p>Title is "{{take.title}}", number of likes is "{{take.picks.length}}"</p>
+                {{!-- <p>This take has {{take.picks.length}} likes</p> --}}
+                </div>
+                {{/each}}
+                    <hr>
+            
+                </div>
+
+            </div>
+
+            <div class="userInfo3">
+
+            
+                <div class="interestBox">
+                    Likes/Interest/Comments:
+                    <hr>
+
+                </div>
+
+                </div>
+
+
+</section>
+    <script src="/js/fileUpload.js"></script>
+    <script src="/js/s3.js"></script>
+    <script src="/js/logout.js"></script>

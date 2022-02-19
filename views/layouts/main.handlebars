@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>To: Cents</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css"> --}}
+</head>
+<body>
+    
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <div class="left_area ">
+        <img src="/img/images/Log.png" class="Logo-header" alt="">
+      </div>
+      <div class="right_area">
+        <label for="check">
+            <i class="fas fa-bars Menu-btn" id="sidebar_btn"></i>
+            <span>
+                <img src="">
+            </span>
+          </label>
+        <!-- <a href="#" class="logout_btn">Logout</a> -->
+      </div>
+    </header>
+
+
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="1.png" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+        <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+        <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="{{userPic}}" class="profile_image" alt="">
+        <h4>Dashboard</h4>
+      </div>
+      {{!-- <a href="/"><img class="site-Icons" src="/assets/images/home button_HouseYellow.png"><span class="menu-dash">Home</span></a>
+      <a href="/profile"><img class="site-Icons" src="/assets/images/Profile-Icon_YellowMan.png"><span class="menu-dash"><span>Profile</span></a>
+      <a href="#"><img class="site-Icons" src="/assets/images/Community-Icon_BlueManYellowGroup.png"><span class="menu-dash"></i><span>Community</span></a>
+      <a href="/login"><img class="site-Icons" src="/assets/images/Logout-Yellow.png"><span class="menu-dash"><span>Login</span></a>
+       --}}
+        {{#if logged_in}}
+      <a href="/"><img class="site-Icons" src="/img/images/home button_HouseYellow.png"><span class="menu-dash">Home</span></a>
+      <a href="/profile"><img class="site-Icons" src="/img/images/Profile-Icon_YellowMan.png"><span class="menu-dash"><span>Profile</span></a>
+      <a href="#"><img class="site-Icons" src="/img/images/Community-Icon_BlueManYellowGroup.png"><span class="menu-dash"></i><span>Community</span></a>
+      <a ><img onclick="logout()" class="site-Icons no-button" id="logout" src="/img/images/Logout-Yellow.png"><span class="menu-dash"><span>Logout</span></a>
+      
+        {{else}}
+      <a href="/"><img class="site-Icons" src="/img/images/home button_HouseYellow.png"><span class="menu-dash">Home</span></a>
+      {{!-- <a href="/profile"><img class="site-Icons" src="/img/images/Profile-Icon_YellowMan.png"><span class="menu-dash"><span>Profile</span></a>
+      <a href="#"><img class="site-Icons" src="/img/images/Community-Icon_BlueManYellowGroup.png"><span class="menu-dash"></i><span>Community</span></a> --}}
+      <a href="/login"><img class="site-Icons" src="/img/images/Logout-Yellow.png"><span class="menu-dash"><span>Login</span></a>
+      
+        {{/if}}
+
+
+    </div>
+    <!--sidebar end-->
+
+
+<!-- homepage route -->
+    <!-- POST A TAKE ----------------------------------------------------------------->
+    <div class="content">
+      <div class="">
+        {{{body}}}
+ 
+    </div>
+
+<!-- Creating Space--------------------------->
+
+
+{{!-- <script src="/assets/js/logic.js"></script> --}}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+</body>
+</html>
