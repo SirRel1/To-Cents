@@ -7,7 +7,6 @@
     "test": "none",
     "start": "node server.js",
     "watch": "nodemon server.js"
- 
   },
   "author": "Terrell Hudson",
   "license": "MIT",
@@ -20,6 +19,7 @@
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
+    "heroku": "^7.59.2",
     "moment": "^2.29.1",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",

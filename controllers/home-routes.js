@@ -46,6 +46,10 @@ router.get('/', async (req, res) => {
 	}
 });
 
+router.get('/uploads', (req, res) => {
+	res.render("photos")
+})
+
 // Render registration page.
 router.get('/register', async (req, res) => {
 	try {

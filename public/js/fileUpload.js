@@ -47,3 +47,35 @@ fetch(`https://the-cents.s3.amazonaws.com/Turtle.jpg`)
 		console.log(data);
 		thePic.setAttribute('src', `${data.profile_pic.replace('public', '')}`);
 	});
+
+	const uploadBtn = document.querySelector('upload')
+
+	// uploadBtn.addEventListener('click', async (e) => {
+	// 	e.preventDefault
+	// 	const pic = document.querySelector('.profilePic').value
+	
+	
+	// 	setTimeout(() => {console.log("this is the second message")}, 3000)
+		 
+	// 	if (pic) {
+	// 		const response = await fetch('/api/users/uploads', {
+	// 			method: 'POST',
+	// 			body: pic,
+	// 			headers: { 'Content-Type': 'application/json' },
+	// 		}).then((data) => {
+				
+	// 			console.log(data)
+	// 			setTimeout(() => {
+	// 				document.location.redirect('/');
+	// 			}, 2000) 
+	// 		});
+	
+	// 		console.log(response);
+	// 	}
+	
+	// 	const clearIt = () => {
+	// 		console.log('ran');
+	// 		document.querySelector('.textBox').value = '';
+	// 		document.querySelector('.titleBox').value = '';
+	// 	};
+	// });	
