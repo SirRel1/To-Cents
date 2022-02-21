@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Takes, Users, Comment, Pick } = require('../models');
+const generateUploadURL = require('../public/js/s3.js')
+
 const withAuth = require('../utils/auth');
 // deprecated code v
 // const Takes = require('../models/Takes.js');
@@ -46,9 +48,10 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.get('/uploads', (req, res) => {
-	res.render("photos")
-})
+// router.get('/api/users/uploads', (req, res) => {
+// 	res.render("photos")
+// })
+
 
 // Render registration page.
 router.get('/register', async (req, res) => {

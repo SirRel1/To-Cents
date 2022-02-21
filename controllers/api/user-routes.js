@@ -299,8 +299,8 @@ router.post('/uploads', upload.single('profile-file'),  async(req, res, next) =>
 		});
 	let response = '<a href="/profile">Profile</a><br>'
 	response += "Files uploaded successfully.<br>"
-	response += `<img class=""src="${result.Location}" /><br>`
-	return res.send(response)
+	// response += `<img class=""src="${result.Location}" /><br>`
+	return res.redirect('/profile')
   });
 
 // Function to logout the User and destroy session.

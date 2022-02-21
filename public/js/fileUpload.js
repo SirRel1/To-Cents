@@ -1,5 +1,7 @@
 // const multer = require('multer')
 
+const res = require("express/lib/response");
+
 // let storage = multer.diskStorage({
 
 //   destination: function (req, file, cb) {
@@ -41,41 +43,44 @@ let selection = 19;
 // 	res.status(200).json(theUsersPic);
 // });
 
-fetch(`https://the-cents.s3.amazonaws.com/Turtle.jpg`)
+fetch(`api/users/uploads`)
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data);
 		thePic.setAttribute('src', `${data.profile_pic.replace('public', '')}`);
 	});
 
-	const uploadBtn = document.querySelector('upload')
+	const uploadForm = document.querySelector('.uploadForm')
+	const uploadInput = document.querySelector('.profilePic')
 
-	// uploadBtn.addEventListener('click', async (e) => {
-	// 	e.preventDefault
-	// 	const pic = document.querySelector('.profilePic').value
+	uploadForm.addEventListener('submit', async (e) => {
+		e.preventDefault
+		console.log('hey')
+		// const file = imageInput.files[0]
+
+		// const { url } = await fetch('/s3Url').then(res > res.json())
+		// console.log(url)
 	
-	
-	// 	setTimeout(() => {console.log("this is the second message")}, 3000)
 		 
-	// 	if (pic) {
-	// 		const response = await fetch('/api/users/uploads', {
-	// 			method: 'POST',
-	// 			body: pic,
-	// 			headers: { 'Content-Type': 'application/json' },
-	// 		}).then((data) => {
+		if (uploadInput) {
+			const response = await fetch('/api/users/uploads', {
+				method: 'POST',
+				body: uploadInput,
+				headers: { 'Content-Type': 'application/json' },
+			}).then((data) => {
 				
-	// 			console.log(data)
-	// 			setTimeout(() => {
-	// 				document.location.redirect('/');
-	// 			}, 2000) 
-	// 		});
+				console.log(data)
+				// setTimeout(() => {
+				// 	document.location.redirect('/uploads');
+				// }, 2000) 
+			});
 	
-	// 		console.log(response);
-	// 	}
+			console.log(response);
+		}
 	
-	// 	const clearIt = () => {
-	// 		console.log('ran');
-	// 		document.querySelector('.textBox').value = '';
-	// 		document.querySelector('.titleBox').value = '';
-	// 	};
-	// });	
+		const clearIt = () => {
+			console.log('ran');
+			document.querySelector('.textBox').value = '';
+			document.querySelector('.titleBox').value = '';
+		};
+	});	

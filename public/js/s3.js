@@ -13,7 +13,12 @@ const s3 = new S3({
     region,
     accessKeyId,
     secretAccessKey
+    
 });
+
+
+
+    
 
 
 
