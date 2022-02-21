@@ -6,7 +6,7 @@
             <!-- Your profile icon displays for post -->
             <div class="left_Area_User">
               {{!-- "/img/images/tocents profile icon - cropped.png" --}}
-                <img class="userIcon" src="{{userPic}}">
+                <img class="userIcon" {{#if userPic}} src="{{userPic}}" {{else}} src="/img/images/tocents profile icon - cropped.png"{{/if}}>
             </div>
 
             <!-- Where you type your post -->
@@ -94,7 +94,7 @@
        
       <div class="sitePosts">
         <div class="userPost">
-          <img class="userIcon" src="/img/images/tocents profile icon - cropped.png">
+          <img class="userIcon" {{#if userPic}} src="{{userPic}}" {{else}} src="/img/images/tocents profile icon - cropped.png"{{/if}} >
           <h2 class="userPost_Title">{{take.title}}</h2>
           <p class="userPost_Description">..."{{take.description}}"
           </p>

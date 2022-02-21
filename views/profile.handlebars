@@ -3,11 +3,11 @@
         
         <aside>
             <div class="profileCard">
-                <img class="profileAvatar" src="{{userPic}}">
+                <img class="profileAvatar" {{#if userPic}} src="{{userPic}}" {{else}} src="/img/images/logo (2cents).png"{{/if}}>
                 <div class="statBox">
                     Memeber Visits: {{countVisit}}
                     <hr>
-                    <b>{{format_date profile}}</b>: {{username}}  
+                    <b>{{format_date profile}}</b>: <p> {{username}} </p> 
                     <hr>
                     <b>Role</b>: All Access!
                     <hr>
@@ -24,7 +24,7 @@
 
 
 
-<section class="userInfo">
+<section class="userInfoCo">
     
 
     <div class="interestBox">
@@ -53,7 +53,7 @@
 </section>
 <section class="userInfo">
     <div class="profilePostBox">
-        <form method="POST" class="upload" action="api/users/uploads" enctype="multipart/form-data">
+        <form method="POST" action="api/users/uploads" enctype="multipart/form-data">
     <div>
         <label>Upload profile picture</label>
         <input type="file" class="profilePic" name="profile-file" required/>
