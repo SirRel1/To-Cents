@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const router = require('express').Router();
 require('dotenv').config();
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -39,7 +40,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/uploads', express.static('uploads'))
+app.use('/profile', router)
 app.use(routes);
 app.get('/s3Url', async (req, res) => {
 	const url = s3.generateUploadURL()
