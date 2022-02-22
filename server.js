@@ -18,12 +18,14 @@ const PORT = process.env.PORT || 8080;
 
 const sess = {
 	cookie: {
+		secure: false,
+		httpOnly: false,
 		maxAge: 1000 * 60 * 60 * 2,
 		sameSite: true
 	},
 	secret: process.env.SECRET,
-	resave: false,
-	saveUnintialized: true,
+	resave: true,
+	saveUnintialized: false,
 	store: new SequelizeStore({
 		db: sequelize
 	  })

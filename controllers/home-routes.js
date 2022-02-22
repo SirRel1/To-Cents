@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Takes, Users, Comment, Pick } = require('../models');
-const generateUploadURL = require('../public/js/s3.js')
 
-const withAuth = require('../utils/auth');
+
+const withAuth = require('../utils/auth.js');
 // deprecated code v
 // const Takes = require('../models/Takes.js');
 
@@ -84,7 +84,9 @@ router.get('/login', (req, res) => {
 		return;
 	  }
 	
-	  res.render('login');
+	  res.render('login', {
+		isMember: req.session.member
+	  });
 	});
 
 

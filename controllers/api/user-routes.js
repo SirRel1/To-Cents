@@ -102,7 +102,7 @@ router.get('/uploads/:key', async (req, res) => {
 
 // Get route to retrieve all post from database.
 router.get('/post', async (req, res) => {
-    const newPost = await Takes.findAll({
+    const newPost = await Takes.findAll( {
         
     });
 
@@ -187,9 +187,10 @@ router.post('/register', async (req, res) => {
 	
 		// change from is member
 		req.session.save(() => {
-			req.session.user_id = userData.id;
-			req.session.username = userData.username;
-			req.session.logged_in = true;
+			req.session.user_id = userData.id
+			req.session.username = userData.username
+			req.session.theEmail = userData.email
+			req.session.logged_in = true
 			req.session.member = true
 			
 			res.status(200).json(userData);	 	
@@ -226,12 +227,13 @@ router.post('/login', async (req, res) => {
 			req.session.theName = cleanUserLogin.username
 			req.session.theEmail = cleanUserLogin.email
 			req.session.profilePic = cleanUserLogin.profile_pic
-			req.session.user_id = cleanUserLogin.id;
-			req.session.logged_in = true;
+			req.session.user_id = cleanUserLogin.id
+			req.session.logged_in = true
 			
 			
 			
 		});
+		
 		
 		res.status(200);
 
@@ -242,7 +244,7 @@ router.post('/login', async (req, res) => {
 		if (!validPass) {
 			return res.status(400).send('Invalid Email or Password');
 		}
-		return res.status(200).json({ message: 'Welcome!' });
+		return res.status(200).send({ message: 'Welcome!' });
 	} catch (err) {
 		return res.status(500).json(err);
 	}
@@ -251,9 +253,10 @@ router.post('/login', async (req, res) => {
 // Recieve new post and persist the data into the database.
 router.post('/post', async (req, res) => {
 	try {
-	const makePost = await Takes.create({
+	const makePost = await Takes.create( {
 		 
-		  ...req.body,
+		  title: req.body.title,
+		  description: req.body.description,
 		  user_id: req.session.user_id,
 		  category: "random",
    
@@ -293,7 +296,7 @@ router.post('/uploads', upload.single('profile-file'),  async(req, res, next) =>
 		profile_pic: thePicture},
 		{
 			where: {
-			email: req.session.theEmail,
+			id: req.session.user_id,
 		},
 		
 		});
